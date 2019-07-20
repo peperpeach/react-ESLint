@@ -71,4 +71,18 @@ If we want to disable these rules we can add
 
 to our rules configuration in `eslintrc.json`. This is where we can disable rules, enable new rules and customize the default configuration that we've extended. In some cases certain linting issues can be auto-corrected by appending `--fix` to `npm run lint`.
   
-If using VSCode in your settings.json add the following to enable auto-fix on save,
+If using VSCode in your `settings.json` add the following to enable auto-fix on save,
+```
+"eslint.validate": [
+  "javascript",
+  "javascriptreact",
+  {
+    "language": "typescript",
+    "autoFix": true
+  },
+  {
+    "language": "typescriptreact",
+    "autoFix": true
+  }
+],
+```
