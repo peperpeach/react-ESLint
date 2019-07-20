@@ -52,10 +52,23 @@ In your **.eslintrc.json** add
 }
 ```
 
-and in your .eslintignore add any paths you don't want linted. In my case, I want to exclude my tests folders and the service worker that is packaged with CRA
+and in your .eslintignore add any paths you don't want linted. In my case, I want to exclude my tests folders and the service worker that is packaged with `create-react-app`
 ```
 src/registerServiceWorker.js
 src/**/__tests__/**
 ```
 
 In your package.json file we're going to add a new scripts file that will allow us to run our linter. Next to your react `start`, `build`, and `test` scripts add
+```
+"lint:fix": "eslint './src/**/*.{ts,tsx}'",
+```
+
+If we want to disable these rules we can add
+```
+"@typescript-eslint/explicit-member-accessibility": 0,
+"@typescript-eslint/explicit-function-return-type": 0,
+```
+
+to our rules configuration in `eslintrc.json`. This is where we can disable rules, enable new rules and customize the default configuration that we've extended. In some cases certain linting issues can be auto-corrected by appending `--fix` to `npm run lint`.
+  
+If using VSCode in your settings.json add the following to enable auto-fix on save,
