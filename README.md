@@ -63,7 +63,7 @@ In your package.json file we're going to add a new scripts file that will allow 
 "lint:fix": "eslint './src/**/*.{ts,tsx}'",
 ```
 
-If we want to disable these rules we can add
+If we want to disable these **rules** we can add
 ```
 "@typescript-eslint/explicit-member-accessibility": 0,
 "@typescript-eslint/explicit-function-return-type": 0,
